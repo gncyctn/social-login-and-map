@@ -1,0 +1,27 @@
+
+
+.region-area{
+    .region-list{
+        width: 200px;
+        margin: 0 auto;
+        ul{
+            list-style: none;
+            padding: 0;
+    
+            li{
+                padding: 10px;
+                cursor: pointer;
+
+                &:nth-child(even) {
+                    background: #ccc;
+                  }
+            }
+            
+        }
+    }
+    
+}
+
+.context-container{
+    position: absolute;
+}

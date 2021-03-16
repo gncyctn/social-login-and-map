@@ -1,0 +1,22 @@
+<div class="col-md-12 ">
+    <h2 class="text-center">İhracat / İthalat Haritası</h2>
+    <countries-map class="demo-maps" [data]="mapData" (contextmenu)="onRightClick($event)"></countries-map>
+</div>
+
+
+<div class="context-container" *ngIf="showHideContext" #anchorRef [style.left.px]="anchorPosition.left"
+    [style.top.px]="anchorPosition.top">
+    <app-context [childMessage]="parentMessage" (messageEvent)="sendreceiveMessage($event)"></app-context>
+</div>
+
+<div class="region-area col-md-12 text-center">
+    <div class="region-list">
+        <h4>Kıta Listesi</h4>
+        <ul>
+            <li *ngFor="let data of continentData" [routerLink]="['/region/', data.trRegion]" routerLinkActive="active">
+                {{data.trRegion}}</li>
+        </ul>
+        <hr>
+        <app-percentage></app-percentage>
+    </div>
+</div>

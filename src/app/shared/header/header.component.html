@@ -1,0 +1,35 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header-container">
+    <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 left-header">
+        <div class="img-area">
+            <div *ngIf="platform != 'GOOGLE'">
+                <img class="" src="{{user.picture.data.url }}">
+            </div>
+            <div *ngIf="platform == 'GOOGLE'">
+                <img class="" src="{{user.photoUrl}}">
+            </div>
+        </div>
+        <div class="text-area">
+            <div>{{ user.name }}</div>
+            <div>{{ user.email }}</div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-5 col-sm-4 col-xs-4 middle-header">
+        <input type="text" class="form-control search-platform" id="exampleInputEmail1" placeholder="Proje Arama"
+            [(ngModel)]="filter.trVal" (ngModelChange)="eventHandler($event)">
+        <!-- <div *ngIf="filter.trVal.length > 2"> -->
+        <div></div>
+        <div class="data-area" *ngIf="listBox">
+            <div class="data-text" *ngFor="let data of countryName | appfilter:filter">
+                <div (contextmenu)="onRightClick($event)">{{data.trVal}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-2 right-header">
+        <div class="pull-right cursor" (click)="signOut()">Çıkış</div>
+    </div>
+</div>
+
+<div class="context-container" *ngIf="showHideContext" #anchorRef [style.left.px]="anchorPosition.left"
+    [style.top.px]="anchorPosition.top">
+    <app-context [childMessage]="parentMessage" (messageEvent)="sendreceiveMessage($event)"></app-context>
+</div>

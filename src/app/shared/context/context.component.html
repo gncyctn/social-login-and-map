@@ -1,0 +1,25 @@
+<div class="context-area" (clickOutside)="onClickedOutside($event)">
+    <div class="context-title">{{contextVal.trVal}}</div>
+    <ul>
+
+        <li>
+            <div class="pull-left">İhracat Yap</div>
+            <div class="pull-right">
+                <div class="pull-left count" (click)="export('up')">+</div>
+                <div class="pull-left count" (click)="export('down')">-</div>
+                <div class="pull-left value">{{contextVal.export}}</div>
+            </div>
+
+        </li>
+        <li>
+            <div class="pull-left">İthalat Yap</div>
+            <div class="pull-right">
+                <div class="pull-left count cursor" (click)="import('up')">+</div>
+                <div class="pull-left count cursor" (click)="import('down')">-</div>
+                <div class="pull-left value">{{contextVal.import}}</div>
+            </div>
+        </li>
+        <li (click)="addNote()" class="cursor">Not Ekle</li>
+        <li (click)="deleteInfo()" class="cursor">Bilgileri Sil</li>
+    </ul>
+</div>

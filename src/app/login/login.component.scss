@@ -1,0 +1,14 @@
+.modal-dialog{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  img{
+    width: 60px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+  }
+}

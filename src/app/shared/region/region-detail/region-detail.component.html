@@ -1,0 +1,29 @@
+<div class="cursor" [routerLink]="['/dashboard']" >Geri</div>
+<h4 class="text-center">{{id}}</h4>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Ülke Bayrağı</th>
+            <th>Ülke Adı</th>
+            <th>İhracat</th>
+            <th>İthalat</th>
+            <th>Not</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of regionList; let i = index">
+            <td>{{i+1}}</td>
+            <td><img width="40" height="40" src="{{data.flag}}"
+                    onError="this.src='https://img.whaleshares.io/wls-img/einstei1/d765e65f432e7e6f0d062616d19364ecdc5631da.png'">
+            </td>
+            <td>{{data.trVal}}</td>
+            <td>{{data.export}}</td>
+            <td>{{data.import}}</td>
+            <td>
+                <div *ngIf="data.note.length > 0 ">{{data.note}}</div>
+                <div *ngIf="data.note.length == 0 ">Not Girilmemiş</div>
+            </td>
+        </tr>
+    </tbody>
+</table>

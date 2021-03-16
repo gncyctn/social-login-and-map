@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.cm-caption-container{
+    display: none!important;
+}
+
+html,body{
+    height: 100%;
+    margin:0;
+  }
+
+  .cursor{
+    cursor: pointer!important;
+  }
+
+  .swal2-popup{
+      font-size: 2rem!important;
+  }
